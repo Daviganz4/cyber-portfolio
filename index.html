@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cyber Portfolio</title>
+
+  <!--Icons-->
+  <link href="assets/img/logo.jpg" rel="icon">
+  <link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cinzel & Lora -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- AOS Animate on Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- CDN for Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body class="bg-black text-gray-200 font-Orbitron">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="assets/img/Wallpaper desktop 2.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video.
+  </video>
+
+  <!-- Overlay (opsional biar teks lebih jelas) -->
+  <div class="video-overlay"></div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-[#0a0a0f]/80 backdrop-blur-md border-b border-cyan-400/30 z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <a href="index.html" class="text-3xl font-Orbitron text-cyan-400 tracking-widest hover:text-cyan-400 transition">
+        Khadavi
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6 font-medium">
+        <a href="#about" class="hover:text-cyan-300 transition">About</a>
+        <a href="#skills" class="hover:text-cyan-300 transition">Skills</a>
+        <a href="#services" class="hover:text-cyan-300 transition">Service</a>
+        <a href="#projects" class="hover:text-cyan-300 transition">Project</a>
+        <a href="#tools" class="hover:text-cyan-300 transition">Tools</a>
+        <a href="#contact" class="hover:text-cyan-300 transition">Contact</a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-menu-button" class="md:hidden text-cyan-300 hover:text-purple-400 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0f111a] border-t border-cyan-400/20">
+      <a href="#about" class="block py-3 px-6 text-white hover:bg-cyan-400/20">About</a>
+      <a href="#skills" class="block py-3 px-6 text-white hover:bg-cyan-400/20">Skills</a>
+      <a href="#services" class="block py-3 px-6 text-white hover:bg-cyan-400/20">Service</a>
+      <a href="#projects" class="block py-3 px-6 text-white hover:bg-cyan-400/20">Project</a>
+      <a href="#tools" class="block py-3 px-6 text-white hover:bg-cyan-400/20">Tools</a>
+      <a href="#contact" class="block py-3 px-6 text-white hover:bg-cyan-400/20">Contact</a>
+    </div>
+  </header>
+
+
+  <main class="container mx-auto px-6 pt-28">
+    <!-- About -->
+    <section id="about" class="py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-5xl font-Orbitron text-cyan-300 mb-6">About Me</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Namaku Muhammad Al Khadavi, tapi cukup panggil aku Davi.
+            Lahir di Bekasi, 6 Desember 2007, dan kini beroperasi di SMK Negeri 2 Kota Bekasi, jalur Rekayasa Perangkat
+            Lunak.
+            Aku bukan diciptakan dengan bakat istimewa, melainkan hanya membawa tekad untuk belajar, bertahan, dan terus
+            melangkah di antara riuh neon dan glitch dunia ini.
+            Hobiku sederhana: menyelami buku sebagai pelarian dari bisingnya kota cyber, menenangkan pikiran di tengah
+            arus data yang tak pernah padam.
+            Jika crew ini menerimaku, maka mulai saat ini satu operator baru resmi tersambung ke dalam sistemmu.
+          </p>
+        </div>
+        <div data-aos="fade-left" class="flex justify-center">
+          <img src="assets/img/profile.jpg" alt="Guild Avatar"
+            class="w-72 h-72 rounded-full object-cover border-4 border-dark-gray-300 shadow-lg">
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎶 Background Music -->
+    <audio id="bg-music" autoplay loop>
+      <source src="assets/img/bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Tombol Musik -->
+    <div class="fixed bottom-6 right-6 flex flex-col items-center space-y-2">
+      <button id="music-toggle"
+        class="bg-maize text-oxford-blue p-6 rounded-full shadow-lg hover:scale-110 transition relative group animate-pulse">🎵
+        <!-- Tooltip -->
+        <span
+          class="absolute bottom-full mb-2 px-2 py-1 text-xs rounded bg-tranpasrent text-cyan-300 opacity-0 group-hover:opacity-100 transition">
+          Klik untuk Play/Pause musik
+        </span>
+      </button>
+      <span id="music-label" class="text-xs text-slate-500 text-cyan-300">🔇 Klik tombol musik</span>
+    </div>
+
+    <!-- Notifikasi Petunjuk -->
+    <div id="music-hint"
+      class="fixed bottom-20 right-6 bg-oxford-blue text-cyan-300 text-sm px-3 py-2 rounded-lg shadow-lg animate-bounce">
+      👉 Klik tombol 🎵 untuk putar musik
+    </div>
+
+    <script>
+      const audio = document.getElementById("bg-music");
+      const toggleBtn = document.getElementById("music-toggle");
+      const label = document.getElementById("music-label");
+      const hint = document.getElementById("music-hint");
+
+      // coba play otomatis
+      window.addEventListener("load", () => {
+        audio.play()
+          .then(() => {
+            label.textContent = "🎶 Musik Aktif";
+            hint.style.display = "none"; // sembunyikan hint kalau auto jalan
+            toggleBtn.classList.remove("animate-pulse");
+          })
+          .catch(() => {
+            label.textContent = "🔇 Klik tombol musik";
+            // hint tetap muncul
+          });
+
+        // otomatis hilangkan hint setelah 5 detik
+        setTimeout(() => {
+          hint.style.display = "none";
+          toggleBtn.classList.remove("animate-pulse");
+        }, 5000);
+      });
+
+      // play/pause manual
+      toggleBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          toggleBtn.textContent = "⏸️";
+          label.textContent = "🎶 Musik Aktif";
+        } else {
+          audio.pause();
+          toggleBtn.textContent = "🎵";
+          label.textContent = "🔇 Musik Mati";
+        }
+      });
+    </script>
+
+
+    <!-- All other sections go here, same as before -->
+
+    <!-- Section: Skills -->
+    <section id="skills" class="py-20">
+      <h2 class="text-4xl font-Orbitron text-cyan-300 text-center mb-12">Skills</h2>
+      <div class="flex justify-center gap-8 flex-wrap text-center">
+        <!-- Skill 1 -->
+        <div class="card flex flex-col items-center justify-center p-6" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/img/skills/office.png" alt="Microsoft Office" class="w-24 h-24 mb-3 object-cover">
+          <h3 class="text-xl font-bold mb-2">Microsoft Office</h3>
+          <p>Menguasai Word, Excel, PowerPoint, dan alat produktivitas Office lainnya.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-gray-950">
+      <div class="container mx-auto px-6">
+        <!-- Heading -->
+        <h2 class="text-4xl font-Orbitron text-cyan-300 text-center mb-16">
+          Services
+        </h2>
+
+        <!-- Services Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Service 1 -->
+          <div
+            class="p-8 bg-gray-900 border border-gray-700 rounded-2xl shadow-lg text-center transition-transform duration-300 hover:-translate-y-2"
+            data-aos="fade-up">
+            <h3 class="text-xl font-bold mb-3 text-cyan-200">Data Entry</h3>
+            <p class="text-gray-400">Input & pengolahan data dengan Microsoft Excel secara rapi & akurat.</p>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="p-8 bg-gray-900 border border-gray-700 rounded-2xl shadow-lg text-center transition-transform duration-300 hover:-translate-y-2"
+            data-aos="fade-up" data-aos-delay="150">
+            <h3 class="text-xl font-bold mb-3 text-cyan-200">Document Formatting</h3>
+            <p class="text-gray-400">Merapikan dokumen Word untuk laporan, proposal, dan surat resmi.</p>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="p-8 bg-gray-900 border border-gray-700 rounded-2xl shadow-lg text-center transition-transform duration-300 hover:-translate-y-2"
+            data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-xl font-bold mb-3 text-cyan-200">Presentation Design</h3>
+            <p class="text-gray-400">Membuat presentasi PowerPoint yang profesional & menarik.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects" class="py-20 bg-black">
+      <div class="container mx-auto px-6">
+        <!-- Title -->
+        <h2 class="text-4xl font-Orbitron text-cyan-300 text-center mb-12">Projects</h2>
+
+        <!-- Grid -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+            data-aos="fade-up">
+            <img src="assets/img/projects/Screenshot 2025-08-23 161207.png" alt="Project 1"
+              class="w-full h-52 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mb-2">Guild Portfolio</h3>
+              <p class="text-gray-400">Website yang memberi informasi tentang saya</p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+            data-aos="fade-up" data-aos-delay="150">
+            <img src="assets/img/projects/project2.png" alt="Project 2" class="w-full h-52 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mb-2">Guild Database</h3>
+              <p class="text-gray-400">Website yang memberi data tentang QUEST yang sulit ditangani</p>
+            </div>
+          </div>
+
+          <!-- Project 3: Games -->
+          <div class="md:col-span-2 flex justify-center">
+            <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+              <img src="assets/img/projects/Screenshot 2025-08-31 193858.png" alt="Game 1"
+                class="w-full h-64 object-cover">
+              <div class="p-6">
+                <h3 class="text-2xl font-semibold mb-2">My Game</h3>
+                <p class="text-gray-400 mb-4">
+                  Game ini dibuat dengan Unity, tersedia di Android, IOS, dan bisa dimainkan langsung di browser.
+                </p>
+                <!-- Tombol Download / Main -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <!-- Android -->
+                  <a href="assets/game/android/Jalak.apk" download
+                    class="p-3 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 transition">
+                    <i class="fa-brands fa-android text-2xl text-cyan-400 mb-2"></i>
+                    <p>Android</p>
+                  </a>
+                  <!-- Iphone OS -->
+                  <a href="https://drive.google.com/drive/folders/1UrI-1b5Fnr0qGv9CUZVqXY8YI8dWJEyy?usp=sharing"
+                    download class="p-3 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 transition">
+                    <i class="fa-brands fa-apple text-2xl text-cyan-400 mb-2"></i>
+                    <p>Iphone OS</p>
+                  </a>
+                  <!-- Main Online -->
+                  <a href="assets/game/web/index.html" target="_blank"
+                    class="p-3 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 transition">
+                    <i class="fas fa-gamepad text-2xl text-cyan-400 mb-2"></i>
+                    <p>Main Online</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 bg-black/80">
+      <h2 class="text-4xl font-Orbitron text-cyan-300 text-center mb-12">Tools</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+        <!-- Tool 1 -->
+        <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center hover:bg-gray-800 transition"
+          data-aos="fade-up">
+          <img src="assets/img/tools/canva.jpg" alt="Canva"
+            class="w-20 h-20 mx-auto mb-4 object-cover border-2 border-purple-500 rounded-full shadow-lg">
+          <h3 class="text-xl font-bold mb-2 text-purple-300">Canva</h3>
+          <p class="text-gray-300">Senjata untuk merancang UI/UX & prototipe proyek digital.</p>
+        </div>
+
+        <!-- Tool 2 -->
+        <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center hover:bg-gray-800 transition"
+          data-aos="fade-up" data-aos-delay="150">
+          <img src="assets/img/tools/vscode.jpg" alt="VS Code"
+            class="w-20 h-20 mx-auto mb-4 object-cover border-2 border-purple-500 rounded-full shadow-lg">
+          <h3 class="text-xl font-bold mb-2 text-purple-300">VS Code</h3>
+          <p class="text-gray-300">Pedang kode untuk menulis mantra digital tanpa kesalahan.</p>
+        </div>
+
+        <!-- Tool 3 -->
+        <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center hover:bg-gray-800 transition"
+          data-aos="fade-up" data-aos-delay="300">
+          <img src="assets/img/tools/github.jpg" alt="GitHub"
+            class="w-20 h-20 mx-auto mb-4 object-cover border-2 border-purple-500 rounded-full shadow-lg">
+          <h3 class="text-xl font-bold mb-2 text-purple-300">GitHub</h3>
+          <p class="text-gray-300">Buku catatan rahasia guild untuk semua kode dan strategi.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gray-900">
+      <h2 class="text-4xl font-Orbitron text-cyan-300 text-center mb-12">Contact Me</h2>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 p-8 border border-gray-700 rounded-lg" data-aos="zoom-in">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-center items-start space-y-6">
+          <!-- Email -->
+          <div class="flex items-center space-x-4 group">
+            <i
+              class="fas fa-envelope text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+            <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">
+              alkhadavimuhammad@gmail.com</p>
+          </div>
+          <!-- Phone -->
+          <div class="flex items-center space-x-4 group">
+            <i
+              class="fas fa-phone-alt text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+            <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">+62 838 0718 2576</p>
+          </div>
+          <!-- Location -->
+          <div class="flex items-center space-x-4 group">
+            <i
+              class="fas fa-map-marker-alt text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+            <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">Kp. Pondok Benda Gang II
+              RT/RW: 003/002 Kel. Jatirasa Kec. Jatiasih Kota Bekasi</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3965.7064285152846!2d106.9663180744111!3d-6.302250661677755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTgnMDguMSJTIDEwNsKwNTgnMDguMCJF!5e0!3m2!1sid!2sid!4v1755949855594!5m2!1sid!2sid"
+            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/js/index.js"></script>
+
+</body>
+
+</html>
