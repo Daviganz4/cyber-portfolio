@@ -34,14 +34,4 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('mouseleave', () => cursor.classList.remove('pointer', 'aura'));
         });
     }
-
-    // --- 4. Parallax ---
-    const parallaxLayers = document.querySelectorAll('.parallax-layer');
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        parallaxLayers.forEach((layer, i) => {
-            const speed = (i + 1) * 0.15;
-            layer.style.transform = `translate3d(0, ${-(scrollTop * speed)}px, 0)`;
-        });
-    });
 });

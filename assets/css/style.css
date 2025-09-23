@@ -58,17 +58,32 @@ a {
 
 /* Layer 1: hero background */
 .layer-1 {
-    background-image: url('../img/bg-hero.png');
-    background-size: cover;
+    position: fixed;   /* biar diem di layar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bg-hero.jpg');
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     opacity: 0.3;
+    z-index: -2; /* biar di belakang konten */
 }
 
-/* Layer 2: scribble overlay */
+
 .layer-2 {
+    position: fixed;
+    /* juga fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('../img/scribble-light (1).png');
     opacity: 0.1;
+    z-index: -1;
 }
+
 
 /* ================= FONTS ================= */
 .font-Orbitron {
