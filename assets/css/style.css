@@ -28,34 +28,6 @@ a {
     background-color: transparent;
 }
 
-/* ================= PARALLAX BACKGROUND ================= */
-.parallax-bg {
-    position: fixed;
-    /* tetap di tempat saat scroll */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    /* berada di belakang konten */
-    overflow: hidden;
-    pointer-events: none;
-    /* agar tidak mengganggu klik konten */
-}
-
-.parallax-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: transform 0.3s ease-out;
-    /* smooth parallax */
-}
-
 /* Layer 1: hero background */
 .layer-1 {
     position: fixed;   /* biar diem di layar */
@@ -249,4 +221,24 @@ img {
 
 .text-oxford-blue {
     color: #0a0a0a !important;
+}
+
+/* ================= VIDEO BACKGROUND ================= */
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.35;          /* bisa diatur sesuai selera */
+    pointer-events: none;
+}
+
+.video-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    z-index: -1;
 }
